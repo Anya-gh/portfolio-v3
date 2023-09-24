@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <>
-      <div className='flex flex-col items-center h-screen w-screen justify-between p-5'>
+      <div className='flex flex-col items-center h-screen w-screen justify-between px-10 py-5'>
         <NavBar links={[{name: 'ABOUT'}, {name: 'CONTACT'}, {name: 'BLOG', url: 'https://anya-gh.github.io/blog'}]} />
         <div className='flex flex-col items-center mt-10'>
           <img src={logo} className='mb-2 h-40'/>
