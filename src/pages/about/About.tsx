@@ -4,10 +4,12 @@ import Footer from "../../components/Footer"
 export default function About() {
   return (
     <div className='flex flex-col items-center justify-between h-screen w-screen px-10 py-5 overflow-scroll'>
-      <NavBar links={[{name: 'HOME'}, {name: 'CONTACT'}, {name: 'BLOG', url: 'https://anya-gh.github.io/blog'}]} />
-      <div className='mb-10'>
-        <h1 className='mt-10 text-4xl text-left w-full font-bold mb-2'>About</h1>
-        <p className="tracking-widest text-xs">Hi! My name's Aniket Singh, and I'm looking for opportunities as a software engineer. Feel free to get in touch.</p>
+      <div>
+        <NavBar links={[{name: 'HOME'}, {name: 'CONTACT'}, {name: 'BLOG', url: 'https://anya-gh.github.io/blog'}]} />
+        <div className='my-10'>
+          <h1 className='mt-10 text-4xl text-left w-full font-bold mb-2'>About</h1>
+          <p className="tracking-widest text-xs">Hi! My name's Aniket Singh, and I'm looking for opportunities as a software engineer. Feel free to get in touch.</p>
+        </div>
       </div>
       <div className='mb-10'>
         <h2 className='tracking-widest text-2xl text-left w-full font-bold mb-2'>Education</h2>
