@@ -30,7 +30,7 @@ export const Projects: ProjectsType[] = [
   },
   {
     name: "Live conference review tool",
-    tags: ["Web development", "React", "Data Processing", "Python", "SQL"],
+    tags: ["Web Development", "React", "Data Processing", "Python", "SQL"],
     description: "In a group project my peers and I created a tool to allow users to get feedback for conferences, both in real-time and in post, to help speakers improve their conferences."
   },
   {
