@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
-import { Projects, ProjectsType } from "./Projects"
+import { Projects } from "./Projects"
 import circle from '../../assets/icons/circle.svg'
-import blogicon from '../../assets/icons/blog-icon.svg'
+import Project, { SideProject } from "./Project"
 
 type CaruouselType = {
   filteredTags: string[]
@@ -60,9 +60,15 @@ export default function Carousel({filteredTags} : CaruouselType) {
   return (
     <div onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className='mt-10 mb-2'>
       <div className="flex flex-row items-center">
-      <button className='mr-5' onClick={() => updateActive('left')}>{mediumScreen && filteredProjects.length > 0 && <SideProject name={filteredProjects[active-1 > -1 ? active-1 : filteredProjects.length - 1].name} description={filteredProjects[active-1 > -1 ? active-1 : filteredProjects.length - 1].description} />}</button>
-      {filteredProjects.length > 0 ? <Project name={filteredProjects[active].name} tags={filteredProjects[active].tags} description={filteredProjects[active].description} blog={filteredProjects[active].blog}/> : <p>Sorry, no projects matching these tags!</p>}
-      <button className='ml-5' onClick={() => updateActive('right')}>{mediumScreen && filteredProjects.length > 0 && <SideProject name={filteredProjects[active+1 > filteredProjects.length - 1 ? 0 : active+1].name} description={filteredProjects[active+1 > filteredProjects.length - 1 ? 0 : active+1].description} />}</button>
+      { // left project
+        mediumScreen && filteredProjects.length > 0 && <button className='mr-5' onClick={() => updateActive('left')}><SideProject name={filteredProjects[active-1 > -1 ? active-1 : filteredProjects.length - 1].name} description={filteredProjects[active-1 > -1 ? active-1 : filteredProjects.length - 1].description} /></button>
+      }
+      { // center project
+        filteredProjects.length > 0 ? <Project name={filteredProjects[active].name} tags={filteredProjects[active].tags} description={filteredProjects[active].description} blog={filteredProjects[active].blog}/> : <p>Sorry, no projects matching these tags!</p>
+      }
+      { // right project
+        mediumScreen && filteredProjects.length > 0 && <button className='ml-5' onClick={() => updateActive('right')}><SideProject name={filteredProjects[active+1 > filteredProjects.length - 1 ? 0 : active+1].name} description={filteredProjects[active+1 > filteredProjects.length - 1 ? 0 : active+1].description} /></button>
+      }
       </div>
       <div className='flex flex-row items-center justify-evenly my-5 px-2'>
         {filteredProjects.map((_, index) => {
@@ -70,56 +76,5 @@ export default function Carousel({filteredTags} : CaruouselType) {
         })}
       </div>
     </div>
-  )
-}
-function Project({name, tags, description, blog} : ProjectsType) {
-  return (
-    <div className='rounded-xl border-zinc-500 overflow-hidden border-[1px]'>
-      <div className='h-20 md:h-28 bg-black opacity-70'>
-        <div className='h-full bg-sunset bg-cover bg-center flex flex-col items-end'>        
-          {blog !== undefined && <a href={blog}><img src={blogicon} alt='blog' className='p-4 h-14'/></a>}
-        </div>
-      </div>
-      <div className='w-60 md:w-72 p-2'>
-        <h1 className='font-bold tracking-widest text-royalgold'>{name}</h1>
-        <div className='flex flex-row overflow-scroll w-full'>
-          {tags.map(tag => 
-              <ProjectTag key={tag} color='bg-emerald-400' name={tag}/>
-          )}
-        </div>
-        <p className="tracking-widest font-light text-xs overflow-scroll h-20">{description}</p>
-      </div>
-    </div>
-  )
-}
-
-type ProjectTagProps = {
-  color: string,
-  name: string
-}
-
-function ProjectTag({color, name} : ProjectTagProps) {
-  return (
-    <div className={`${color} p-2 m-1 rounded-xl tracking-widest font-bold text-left text-[0.5rem] text-white flex flex-row items-center whitespace-nowrap`}>{name}</div>
-  )
-}
-
-type SideProjectProps = {
-  name: string,
-  description: string
-}
-
-function SideProject({name, description} : SideProjectProps) {
-  return (
-      <div className='rounded-xl border-zinc-500 overflow-hidden border-[1px]'>
-        <div className='h-20 bg-black opacity-70'>
-          <div className='h-full bg-sunset bg-cover bg-center flex flex-col items-end'>        
-          </div>
-        </div>
-        <div className='w-40 p-2'>
-          <h1 className='font-bold tracking-widest text-royalgold text-xs h-9'>{name}</h1>
-          <p className="tracking-widest font-light text-xs overflow-scroll h-16">{description}</p>
-        </div>
-      </div>
   )
 }

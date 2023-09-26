@@ -37,7 +37,7 @@ function Tag({color, name, filteredTags, setFilteredTags} : TagProps) {
   )
 }
 
-type TagType = {
+/*type TagType = {
   name: string,
   color: string
 }
@@ -45,8 +45,9 @@ type TagType = {
 type TagsType = {
   topics: TagType[],
   tools: TagType[]
-}
-export const Tags: TagsType = {
+}*/
+
+export const Tags = {
   topics: [
     {
       name: "Machine Learning",
@@ -94,4 +95,4 @@ export const Tags: TagsType = {
     name: "C",
     color: "bg-violet-400"
   }]
-}
+} as const

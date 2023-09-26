@@ -7,7 +7,7 @@ export type ProjectsType = {
 export const Projects: ProjectsType[] = [
   {
     name: "MAIO",
-    tags: ["Web development", "React", "TypeScript", "Tailwind", "Data Processing", "Python", "SQL"],
+    tags: ["Web Development", "React", "TypeScript", "Tailwind", "Data Processing", "Python", "SQL"],
     description: "A collection of mental health tools all in one place. Using React, TypeScript, Tailwind for the front-end and Python, SQL for the back-end.",
     blog: "https://anya-gh.github.io/blog/maio/part-1-(getting-started)"
   },
