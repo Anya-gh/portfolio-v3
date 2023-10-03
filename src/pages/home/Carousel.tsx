@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { Projects } from "./Projects"
 import circle from '../../assets/icons/circle.svg'
 import Project, { SideProject } from "./Project"
+import { AnimatePresence } from "framer-motion"
 
 type CaruouselType = {
   filteredTags: string[]
@@ -59,22 +60,24 @@ export default function Carousel({filteredTags} : CaruouselType) {
 
   return (
     <div onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className='mt-10 mb-2'>
-      <div className="flex flex-row items-center">
-      { // left project
-        mediumScreen && filteredProjects.length > 0 && <button className='mr-5' onClick={() => updateActive('left')}><SideProject name={filteredProjects[active-1 > -1 ? active-1 : filteredProjects.length - 1].name} description={filteredProjects[active-1 > -1 ? active-1 : filteredProjects.length - 1].description} /></button>
-      }
-      { // center project
-        filteredProjects.length > 0 ? <Project name={filteredProjects[active].name} tags={filteredProjects[active].tags} description={filteredProjects[active].description} blog={filteredProjects[active].blog}/> : <p>Sorry, no projects matching these tags!</p>
-      }
-      { // right project
-        mediumScreen && filteredProjects.length > 0 && <button className='ml-5' onClick={() => updateActive('right')}><SideProject name={filteredProjects[active+1 > filteredProjects.length - 1 ? 0 : active+1].name} description={filteredProjects[active+1 > filteredProjects.length - 1 ? 0 : active+1].description} /></button>
-      }
-      </div>
-      <div className='flex flex-row items-center justify-evenly my-5 px-2'>
-        {filteredProjects.map((_, index) => {
-          return <button key={index} onClick={() => {setActive(index)}}><img src={circle} className={'mx-1 ' + (active === index ? 'h-3' : 'h-2')}/></button>
-        })}
-      </div>
+      <AnimatePresence mode='wait'>
+        <div className="flex flex-row items-center">
+        { // left project
+          mediumScreen && filteredProjects.length > 1 && <button className='mr-5' onClick={() => updateActive('left')}><SideProject name={filteredProjects[active-1 > -1 ? active-1 : filteredProjects.length - 1].name} description={filteredProjects[active-1 > -1 ? active-1 : filteredProjects.length - 1].description} theme={filteredProjects[active-1 > -1 ? active-1 : filteredProjects.length - 1].theme} tags={filteredProjects[active-1 > -1 ? active-1 : filteredProjects.length - 1].tags}/></button>
+        }
+        { // center project
+          filteredProjects.length > 0 ? <Project name={filteredProjects[active].name} tags={filteredProjects[active].tags} description={filteredProjects[active].description} blog={filteredProjects[active].blog} theme={filteredProjects[active].theme}/> : <p>Sorry, no projects matching these tags!</p>
+        }
+        { // right project
+          mediumScreen && filteredProjects.length > 2 && <button className='ml-5' onClick={() => updateActive('right')}><SideProject name={filteredProjects[active+1 > filteredProjects.length - 1 ? 0 : active+1].name} description={filteredProjects[active+1 > filteredProjects.length - 1 ? 0 : active+1].description} theme={filteredProjects[active+1 > filteredProjects.length - 1 ? 0 : active+1].theme} tags={filteredProjects[active+1 > filteredProjects.length - 1 ? 0 : active+1].tags}/></button>
+        }
+        </div>
+        <div className='flex flex-row items-center justify-evenly my-5 px-2'>
+          {filteredProjects.map((_, index) => {
+            return <button key={index} onClick={() => {setActive(index)}}><img src={circle} className={'mx-1 ' + (active === index ? 'h-3' : 'h-2')}/></button>
+          })}
+        </div>
+      </AnimatePresence>
     </div>
   )
 }
