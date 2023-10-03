@@ -19,7 +19,7 @@ export default function NavBar({links} : NavBarType) {
 
   return (
     <div className='flex flex-row items-center justify-between w-full'>
-      {links.map(link => {return (link.url ? <a key={link.name} href={link.url}><h1 className='text-royalgold tracking-widest font-bold'>{link.name}</h1></a> : <button key={link.name} onClick={() => onClickHandler(link.name)}><h1 className='text-royalgold tracking-widest font-bold'>{link.name}</h1></button>)})}
+      {links.map(link => {return (link.url ? <a key={link.name} href={link.url}><h1 className='text-royalgold tracking-widest font-bold lg:hover:brightness-125 transition duration-200'>{link.name}</h1></a> : <button key={link.name} onClick={() => onClickHandler(link.name)}><h1 className='text-royalgold tracking-widest font-bold lg:hover:brightness-125 transition duration-200'>{link.name}</h1></button>)})}
     </div>
   )
 }

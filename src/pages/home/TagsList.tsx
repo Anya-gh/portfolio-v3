@@ -8,10 +8,10 @@ export default function TagsList({filteredTags, setFilteredTags} : TagsProps) {
 
   return (
     <div className='flex flex-col mt-5 px-10 w-full'>
-      <div className='flex flex-row overflow-scroll mb-2 w-full'>
+      <div className='flex flex-row overflow-scroll lg:overflow-visible mb-2 w-full'>
         {Tags.topics.map(tag => {return <Tag key={tag.name} name={tag.name} color={tag.color} filteredTags={filteredTags} setFilteredTags={setFilteredTags}/>})}
       </div>
-      <div className='flex flex-row overflow-scroll w-full'>
+      <div className='flex flex-row overflow-scroll lg:overflow-visible w-full'>
         {Tags.tools.map(tag => {return <Tag key={tag.name} name={tag.name} color={tag.color} filteredTags={filteredTags} setFilteredTags={setFilteredTags}/>})}
       </div>
     </div>
@@ -33,7 +33,7 @@ function Tag({color, name, filteredTags, setFilteredTags} : TagProps) {
   }
 
   return (
-    <span className='m-auto'><button onClick={onClickHandler} className={`${color} p-2 md:p-3 whitespace-nowrap mx-2 rounded-xl md:rounded-2xl tracking-widest font-bold text-left text-[0.6rem] md:text-xs ` + (filteredTags.includes(name) ? 'text-white' : 'text-black')}>{name}</button></span>
+    <span className='m-auto'><button onClick={onClickHandler} className={`${color} p-2 md:p-3 whitespace-nowrap mx-2 rounded-xl md:rounded-2xl tracking-widest font-bold text-left text-[0.6rem] md:text-xs lg:hover:scale-110 transition duration-200 ` + (filteredTags.includes(name) ? 'text-white' : 'text-black')}>{name}</button></span>
   )
 }
 

@@ -2,31 +2,35 @@ export type ProjectsType = {
   name: string,
   tags: string[]
   description: string,
-  blog?: string
+  blog?: string,
+  theme?: string
 }
 export const Projects: ProjectsType[] = [
   {
     name: "MAIO",
     tags: ["Web Development", "React", "TypeScript", "Tailwind", "Data Processing", "Python", "SQL"],
     description: "A collection of mental health tools all in one place. Using React, TypeScript, Tailwind for the front-end and Python, SQL for the back-end.",
-    blog: "https://anya-gh.github.io/blog/maio/part-1-(getting-started)"
+    blog: "https://anya-gh.github.io/blog/maio/part-1-(getting-started)",
+    theme: "sunset"
   },
   {
     name: "Fighting Game Analysis Engine",
     tags: ["Machine Learning", "Data Processing", "Python", "Algorithm Design"],
     description: "Analysis engines are tools to get better at games; I made one for a fighting game, primarily with Python, using machine learning.",
-    blog: "https://anya-gh.github.io/blog/fighting-game-analysis-engine"
+    blog: "https://anya-gh.github.io/blog/fighting-game-analysis-engine",
+    theme: "ggst"
   },
   {
     name: "Music Humanisation",
     tags: ["Machine Learning", "Data Processing", "Python", "PyTorch", "Algorithm Design"],
     description: "Computers are capable of playing back music, but it often sounds robotic and boring. With myself as project manager, my peers and I created a system to play music back the way a human would, with human dynamics and tempo.",
-    blog: "https://anya-gh.github.io/blog/music-humanisation"
+    blog: "https://anya-gh.github.io/blog/music-humanisation",
+    theme: "piano"
   },
   {
     name: "Packet sniffer",
     tags: ["Data Processing", "C"],
-    description: "As part of a module on networks and system architecture, I created a packet sniffer in C to defend against various cyber attacks."
+    description: "As part of a module on networks and system architecture, I created a packet sniffer in C to defend against various cyber attacks.",
   },
   {
     name: "Live conference review tool",
