@@ -40,10 +40,10 @@ export default function Carousel({filteredTags} : CaruouselType) {
 
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return
-
     const distance = touchStart - touchEnd
+    if (Math.abs(distance) < minSwipeDistance) return
     // if someone swipes right, they want it to get to the left project
-    const direction = distance > minSwipeDistance ? 'right' : 'left'
+    const direction = distance > 0 ? 'right' : 'left'
     updateActive(direction)
   }
 
