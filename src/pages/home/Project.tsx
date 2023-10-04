@@ -38,7 +38,7 @@ export default function Project({name, tags, description, blog, theme} : Project
     exit={{opacity: 0, transition: {duration: 1}}}
     key={name}
     >
-      <div className='rounded-xl border-zinc-500 overflow-hidden border-[1px] w-60 md:w-72 '>
+      <div className='rounded-xl border-zinc-500 overflow-hidden border-[1px] w-60 md:w-72 lg:w-[22rem]'>
         <div className='h-20 md:h-28 bg-black opacity-70'>
           <div className={`h-full flex flex-col items-end ${bg}`}>        
             {blog !== undefined && <a href={blog}><img src={blogicon} alt='blog' className='p-4 h-14 lg:hover:scale-110 transition duration-300'/></a>}
@@ -112,7 +112,7 @@ export function SideProject({name, description, theme, tags} : SideProjectProps)
     exit={{opacity: 0, transition: {duration: 1}}}
     key={name}
     >
-      <div className='rounded-xl border-zinc-500 overflow-hidden border-[1px] w-40 text-left'>
+      <div className='rounded-xl border-zinc-500 overflow-hidden border-[1px] w-40 text-left lg:w-48'>
         <div className='h-20 bg-black opacity-70'>
           <div className={`h-full flex flex-col items-end ${bg}`}>        
           </div>

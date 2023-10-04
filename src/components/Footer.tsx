@@ -5,7 +5,7 @@ import circle from '../assets/icons/circle.svg'
 
 export default function Footer() {
   return (
-    <div className='w-full px-10 flex flex-col items-center mt-10 pb-10'>
+    <div className='w-full px-10 md:px-20 flex flex-col items-center mt-10 pb-10'>
       <Icons />
       <p className='mt-5 text-sm tracking-widest text-slate-500 text-center'>Created by me! You can have a look on GitHub <a href="https://github.com/Anya-gh/portfolio" className='text-slate-300'>here</a> or find my blog <a href="https://anya-gh.github.io/blog" className='text-slate-300'>here</a>.</p>
     </div>

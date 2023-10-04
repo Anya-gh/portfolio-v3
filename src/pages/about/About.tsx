@@ -3,7 +3,7 @@ import Footer from "../../components/Footer"
 
 export default function About() {
   return (
-    <div className='flex flex-col items-center justify-between h-screen w-screen px-10 py-5 overflow-scroll lg:px-80'>
+    <div className='flex flex-col items-center justify-between h-screen w-screen px-10 py-5 overflow-scroll lg:px-72 2xl:px-[30rem]'>
       <div className='w-full'>
         <NavBar links={[{name: 'HOME'}, {name: 'CONTACT'}, {name: 'BLOG', url: 'https://anya-gh.github.io/blog'}]} />
         <div className='my-10'>

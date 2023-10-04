@@ -29,7 +29,7 @@ export default function Carousel({filteredTags} : CaruouselType) {
   }
 
   // the required distance between touchStart and touchEnd to be detected as a swipe
-  const minSwipeDistance = 50 
+  const minSwipeDistance = 150 
 
   const onTouchStart = (e : React.TouchEvent) => {
     setTouchEnd(null) // otherwise the swipe is fired even with usual touch events
