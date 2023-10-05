@@ -41,7 +41,7 @@ export default function Project({name, tags, description, blog, theme} : Project
       <div className='rounded-xl border-zinc-500 overflow-hidden border-[1px] w-60 md:w-72 lg:w-[22rem]'>
         <div className='h-20 md:h-28 bg-black opacity-70'>
           <div className={`h-full flex flex-col items-end ${bg}`}>        
-            {blog !== undefined && <a href={blog}><img src={blogicon} alt='blog' className='p-4 h-14 lg:hover:scale-110 transition duration-300'/></a>}
+            {blog !== undefined && <a href={blog} target="_blank"><img src={blogicon} alt='blog' className='p-4 h-14 lg:hover:scale-110 transition duration-300'/></a>}
           </div>
         </div>
         <div className='p-2'>

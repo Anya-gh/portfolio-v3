@@ -15,11 +15,11 @@ export default function Footer() {
 function Icons() {
   return (
     <div className='flex flex-row items-center justify-between w-full'>
-      <a href="mailto:anya2718@icloud.com"><img src={mail} className='h-6' alt='mail' /></a>
+      <a href="mailto:anya2718@icloud.com" target="_blank"><img src={mail} className='h-6' alt='mail'/></a>
       <img src={circle} className='h-1 mx-5 opacity-50' alt='circle' />
-      <a href="https://github.com/Anya-gh/"><img src={github} className='h-8' alt='mail' /></a>
+      <a href="https://github.com/Anya-gh/" target="_blank"><img src={github} className='h-8' alt='mail' /></a>
       <img src={circle} className='h-1 mx-5 opacity-50' alt='circle' />
-      <a href="https://www.linkedin.com/in/aniket-singh-dev/"><img src={linkedin} className='h-8' alt='mail' /></a>
+      <a href="https://www.linkedin.com/in/aniket-singh-dev/" target="_blank"><img src={linkedin} className='h-8' alt='mail' /></a>
     </div>
   )
 }

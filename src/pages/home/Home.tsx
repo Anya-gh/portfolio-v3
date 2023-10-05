@@ -4,13 +4,14 @@ import TagsList from './TagsList'
 import Carousel from './Carousel'
 import Footer from '../../components/Footer'
 import NavBar from '../../components/NavBar'
+import { motion } from 'framer-motion'
 
 export default function Home() {
 
   const [filteredTags, setFilteredTags] = useState<string[]>([])
 
   return (
-    <>
+    <motion.div initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 0.5}}} exit={{opacity: 0, transition: {duration: 0.5}}}>
       <div className='flex flex-col items-center h-screen w-screen justify-between px-10 py-5 lg:px-72 2xl:px-[30rem]'>
         <NavBar links={[{name: 'ABOUT'}, {name: 'CONTACT'}, {name: 'BLOG', url: 'https://anya-gh.github.io/blog'}]} />
         <div className='flex flex-col md:flex-row items-center mt-10'>
@@ -21,6 +22,6 @@ export default function Home() {
         <Carousel filteredTags={filteredTags}/>
         <Footer />
       </div>
-    </>
+    </motion.div>
   )
 }
