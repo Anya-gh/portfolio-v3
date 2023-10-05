@@ -19,7 +19,7 @@ export default function Contact() {
         <Link name='GitHub' href='https://github.com/Anya-gh' link='github.com/Anya-gh' icon={github} />
         <Link name='LinkedIn' href='https://linkedin.com/in/aniket-singh-dev' link='linkedin.com/in/aniket-singh-dev' icon={linkedin} />
         <p className='tracking-widest'>Thanks for taking a look!</p>
-        <p className='mt-5 text-sm tracking-widest text-slate-500 text-center'>Created by me! You can have a look on GitHub <a href="https://github.com/Anya-gh/portfolio" className='text-slate-300'>here</a> or find my blog <a href="https://anya-gh.github.io/blog" className='text-slate-300'>here</a>.</p>
+        <p className='mt-5 text-sm tracking-widest text-slate-500 text-center'>Created by me! You can have a look on GitHub <a href="https://github.com/Anya-gh/portfolio" className='text-slate-300'>here</a>.</p>
       </div>
     </motion.div>
   )
