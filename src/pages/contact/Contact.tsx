@@ -19,7 +19,7 @@ export default function Contact() {
         <Link name='GitHub' href='https://github.com/Anya-gh' link='github.com/Anya-gh' icon={github} />
         <Link name='LinkedIn' href='https://linkedin.com/in/aniket-singh-dev' link='linkedin.com/in/aniket-singh-dev' icon={linkedin} />
         <p className='tracking-widest'>Thanks for taking a look!</p>
-        <p className='mt-5 text-sm tracking-widest text-slate-500 text-center'>Created by me! You can have a look on GitHub <a href="https://github.com/Anya-gh/portfolio" className='text-slate-300'>here</a>.</p>
+        <p className='mt-5 text-sm tracking-widest text-slate-500 text-center'>Created by me! You can have a look on GitHub <a href="https://github.com/Anya-gh/portfolio" className='text-slate-300'>here</a> or find my blog <a href="https://anya-gh.github.io/blog" className='text-slate-300'>here</a>.</p>
       </div>
     </motion.div>
   )
@@ -36,7 +36,7 @@ function Link({name, link, href, icon} : LinkProps) {
   return (
     <div className="flex flex-row items-center justify-between w-60 md:w-[25rem] lg:hover:scale-105 duration-200 lg:opacity-70 lg:hover:opacity-100">
       <span><h1 className='tracking-widest text-xl md:text-3xl'>{name}</h1><p className='text-xs md:text-sm'>{link}</p></span>
-      <a href={href ? href : link}><img src={icon} alt={name.toLowerCase()} className='w-10 md:w-14 h-auto'/></a>
+      <a href={href ? href : link} target="_blank"><img src={icon} alt={name.toLowerCase()} className='w-10 md:w-14 h-auto'/></a>
     </div>
   )
 }
